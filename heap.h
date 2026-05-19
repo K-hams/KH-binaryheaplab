@@ -16,6 +16,7 @@ class Heap{
     void push(int value);     // insert value; //duplicates are allowed
     void pop(); // delete the min element
     int top();
+    void heapify(int i);
     bool empty();
 
  private:
