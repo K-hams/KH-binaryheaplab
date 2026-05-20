@@ -25,10 +25,6 @@ Heap::Heap(std::vector<int>::iterator start, std::vector<int>::iterator end){
     heapify(i);
     
   }
-
-  cout << "heap size after build: " << vdata.size() << "\n";
-  for (int x : vdata) cout << x << " ";
-  cout << "\n";
   
 
 }
