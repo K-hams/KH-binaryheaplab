@@ -7,17 +7,32 @@ using std::cout;
 
 // Builds a heap from the range [start, end) using the heapify algorithm
 // Should run in O(n) time
-Heap::Heap(std::vector<int>::iterator start, std::vector<int>::iterator end){
 
+Heap::Heap(){ //default
+}
+
+Heap::Heap(std::vector<int>::iterator start, std::vector<int>::iterator end){
+  
+  //add to vdata
+   for (auto it = start; it != end; ++it) {
+    vdata.push_back(*it);
+  }
+  
   //nothing in means its already good
   if (vdata.size() <= 1){
     return;
   }
-
+  
   //creating new helper
-  for (int i = vdata.size()/2 - 1; i >= 0; i--){
+  for (int i = vdata.size()/ 2 - 1; i >= 0; i--){
+    
     heapify(i);
+    
   }
+
+  cout << "heap size after build: " << vdata.size() << "\n";
+  for (int x : vdata) cout << x << " ";
+  cout << "\n";
   
 
 }
@@ -84,6 +99,9 @@ void Heap::push(int value){
 // (but does not return it), then ensures
 // the heap is correctly arranged
 void Heap::pop(){
+  if (vdata.empty()){
+    return;
+  }
   //min is the front because its a min heap so we bring it to the back
   vdata[0] = vdata.back();
   vdata.pop_back();
