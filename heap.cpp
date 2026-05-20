@@ -7,10 +7,6 @@ using std::cout;
 
 // Builds a heap from the range [start, end) using the heapify algorithm
 // Should run in O(n) time
-
-Heap::Heap(){ //default
-}
-
 Heap::Heap(std::vector<int>::iterator start, std::vector<int>::iterator end){
   
   //add to vdata
